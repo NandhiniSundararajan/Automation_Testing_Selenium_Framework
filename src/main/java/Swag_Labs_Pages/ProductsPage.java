@@ -1,8 +1,11 @@
 package Swag_Labs_Pages;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import util.ReporterUtil;
+import util.ScreenShotUtil;
 
 import java.util.List;
 
@@ -30,6 +33,9 @@ public class ProductsPage extends BasePage{
 
     public int noOfItemsInCart() {
         List<WebElement> noOfItemsInCart = getDriver().findElements(shoppingCartBadgeLocator);
+        ReporterUtil.getTest().info("No. of items in the cart is checked");
+        String screenshot = ScreenShotUtil.takeScreenShot();
+        ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
         if(noOfItemsInCart.size()>0){
             return Integer.parseInt(getText(shoppingCartBadgeLocator));
         }
@@ -39,10 +45,14 @@ public class ProductsPage extends BasePage{
     }
 
     public void addToCart(String item){
+        ReporterUtil.getTest().info("Items are added to the cart");
         getDriver().findElement(By.xpath(addToCartXpath.replace("$$",item))).click();
+        String screenshot = ScreenShotUtil.takeScreenShot();
+        ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
     }
 
     public CheckoutPage openShoppingCart(){
+        ReporterUtil.getTest().info("Shopping cart icon is clicked");
         click(shoppingCartIconLocator);
         getDriver().get(URL);
         return new CheckoutPage();

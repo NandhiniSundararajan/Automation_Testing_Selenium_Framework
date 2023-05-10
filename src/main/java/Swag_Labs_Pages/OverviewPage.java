@@ -1,9 +1,14 @@
 package Swag_Labs_Pages;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import util.ReporterUtil;
+import util.ScreenShotUtil;
+
 import static Common.DriverManager.*;
+
 import java.util.List;
 
 public class OverviewPage extends BasePage {
@@ -22,6 +27,7 @@ public class OverviewPage extends BasePage {
         click(finishButtonLocator);
         return new FinalPage();
     }
+
     public Double sumOfItemPrices() {
 
         explicitWait().until(ExpectedConditions.presenceOfElementLocated(itemPriceLocator));
@@ -44,16 +50,20 @@ public class OverviewPage extends BasePage {
         taxAmount = (amount * 0.08);
         String tempAmount = String.format("%1.2f", taxAmount);
         taxAmount = Double.valueOf(tempAmount);
+        ReporterUtil.getTest().info("The tax amount to be paid is calculated as: " + taxAmount);
         return taxAmount;
     }
 
     public Double calculateTotalAmountToBePaid() {
         totalAmount = sum + taxAmount;
+        ReporterUtil.getTest().info("The total amount to be paid is calculated as: " + totalAmount);
         return totalAmount;
     }
 
     public Double totalAmountFromTheApp() {
         totalAmountFromApp = Double.valueOf(getDriver().findElement(totalAmountLocator).getText().split("[$]")[1]);
+        String screenshot = ScreenShotUtil.takeScreenShot();
+        ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
         return totalAmountFromApp;
     }
 }

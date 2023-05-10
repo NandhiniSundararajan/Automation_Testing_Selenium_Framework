@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DataProvider">
+    <listeners>
+        <listener class-name="Reports.FrameworkListener"></listener>
+    </listeners>
+    <test name="DataProviderTest">
+        <classes>
+            <class name="Excel.DataProviderTrial">
+                <methods>
+                    <include name="dpTest"></include>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+    <test name="Unit tests">
+        <classes>
+
+        </classes>
+    </test>
+</suite>

@@ -8,7 +8,7 @@ import java.util.List;
 public class EndToEndTests extends BaseTests{
     LoginPage login = new LoginPage();
     @Test
-    public void swagLabsTest1() {
+    public void swagLabsTest1(){
 
         login.navigateToHomePage();
         login.waitUntilLoginLogoIsVisible();

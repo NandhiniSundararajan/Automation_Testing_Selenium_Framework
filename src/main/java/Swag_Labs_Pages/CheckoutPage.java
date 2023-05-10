@@ -1,7 +1,9 @@
 package Swag_Labs_Pages;
 
+import com.aventstack.extentreports.model.Report;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import util.ReporterUtil;
 
 import static Common.DriverManager.*;
 
@@ -24,6 +26,7 @@ public class CheckoutPage extends BasePage{
         return items;
     }
     public UserInformationPage checkout() {
+        ReporterUtil.getTest().info("Proceeding to checkout page");
         click(checkoutButtonLocator);
         return new UserInformationPage();
     }

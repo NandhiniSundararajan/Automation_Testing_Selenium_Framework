@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="General Suite">
+    <listeners>
+        <listener class-name="Reports.FrameworkListener"></listener>
+    </listeners>
+    <test name="End to End">
+        <classes>
+            <class name="TestngTests.AmazonTests">
+                <methods>
+                    <include name="amazonTest1"></include>
+                </methods>
+            </class>
+            <class name="TestngTests.GoogleTests">
+                <methods>
+                    <include name="googleTest1"></include>
+                </methods>
+            </class>
+            <class name="TestngTests.MicroTests">
+                <methods>
+                    <include name="microTest1"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unit tests">
+        <classes>
+        <class name="TestngTests.AmazonTests">
+            <methods>
+                <include name="amazonTest2"></include>
+            </methods>
+        </class>
+        <class name="TestngTests.GoogleTests">
+            <methods>
+                <include name="googleTest2"></include>
+            </methods>
+        </class>
+        <class name="TestngTests.MicroTests">
+            <methods>
+                <include name="microTest2"></include>
+            </methods>
+        </class>
+        </classes>
+    </test>
+    <test name="Smoke tests">
+        <classes>
+            <class name="TestngTests.AmazonTests">
+                <methods>
+                    <include name="amazonTest3"></include>
+                </methods>
+            </class>
+            <class name="TestngTests.GoogleTests">
+                <methods>
+                    <include name="googleTest3"></include>
+                </methods>
+            </class>
+            <class name="TestngTests.MicroTests">
+                <methods>
+                    <include name="microTest3"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

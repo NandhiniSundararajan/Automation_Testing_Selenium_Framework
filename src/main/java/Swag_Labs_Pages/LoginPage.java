@@ -1,9 +1,12 @@
 package Swag_Labs_Pages;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import util.PropertiesUtil;
+import util.ReporterUtil;
+import util.ScreenShotUtil;
 
 import java.util.List;
 import static Common.DriverManager.*;
@@ -25,6 +28,9 @@ public class LoginPage extends BasePage {
     public void navigateToHomePage(){
         getDriver().get(URL);
         getDriver().manage().window().maximize();
+        ReporterUtil.getTest().info("Logged into the app" + URL);
+        String screenshot = ScreenShotUtil.takeScreenShot();
+        ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
     }
 
     public void waitUntilLoginLogoIsVisible(){
@@ -35,12 +41,15 @@ public class LoginPage extends BasePage {
         sendKeys(usernameLocator,uname);
         sendKeys(passwordLocator,password);
         click(loginButtonLocator);
+        ReporterUtil.getTest().info("Clicked on login button");
         return new ProductsPage();
     }
 
     public void loginUsingInvalidCredentials(String uname, String password){
         sendKeys(usernameLocator,uname);
         sendKeys(passwordLocator,password);
+        String screenshot = ScreenShotUtil.takeScreenShot();
+        ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
         click(loginButtonLocator);
     }
     //to get the error notification

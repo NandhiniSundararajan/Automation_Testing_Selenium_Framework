@@ -2,6 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Swag Labs Suite" parallel="methods" thread-count="2">
+    <listeners>
+        <listener class-name="Reports.FrameworkListener"></listener>
+    </listeners>
     <test name="End to End">
         <classes>
             <class name="Swag_Labs_Tests.EndToEndTests">
@@ -10,7 +13,14 @@
     </test>
     <test name="Unit tests">
         <classes>
-            <class name="Swag_Labs_Tests.LoginPageTests"></class>
+            <class name="Swag_Labs_Tests.LoginPageTests">
+                <methods>
+                    <include name="standard_userLoginTest"></include>
+                    <include name="invalidUsernameLoginTest"></include>
+                    <include name="invalidPasswordLoginTest"></include>
+                    <include name="invalidUsernameAndPasswordLoginTest"></include>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
