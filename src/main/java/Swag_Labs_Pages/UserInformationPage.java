@@ -10,11 +10,11 @@ public class UserInformationPage extends BasePage{
     String URL = "https://www.saucedemo.com/checkout-step-two.html";
 
     //Locators
-    By firstNameLocator = By.id("first-name");
-    By lastNameLocator = By.id("last-name");
-    By postalCodeLocator = By.id("postal-code");
-    By errorNotificationLocator = By.xpath("//h3[@data-test='error']");
-    By continueButtonLocator = By.id("continue");
+    private By firstNameLocator = By.id("first-name");
+    private By lastNameLocator = By.id("last-name");
+    private By postalCodeLocator = By.id("postal-code");
+    private By errorNotificationLocator = By.xpath("//h3[@data-test='error']");
+    private By continueButtonLocator = By.id("continue");
 
     //Methods
     public void getUserInformation(String firstName, String lastName, String postalCode){

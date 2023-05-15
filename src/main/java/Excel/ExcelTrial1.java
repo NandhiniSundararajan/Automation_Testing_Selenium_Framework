@@ -4,7 +4,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 
 import java.io.IOException;
 
@@ -29,8 +28,5 @@ public class ExcelTrial1 {
             data[i-1][2] = row.getCell(2).getStringCellValue();
         }
         return data;
-
     }
-
-
 }

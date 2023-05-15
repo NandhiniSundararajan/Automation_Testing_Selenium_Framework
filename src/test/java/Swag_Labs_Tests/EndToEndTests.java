@@ -31,7 +31,7 @@ public class EndToEndTests extends BaseTests{
 
         CheckoutPage checkoutPageObj = productPageObj.openShoppingCart();
 
-        //Assert 3 - to check the items in the shopping cart are the same the items in the shopping list
+        //Assert 3 - to check the items in the shopping cart are the same as the items in the shopping list
         List <String> actualItemsFromTheCart = checkoutPageObj.getItemsFromCart();
         Assert.assertTrue(actualItemsFromTheCart.containsAll(itemsList));
 
@@ -46,7 +46,7 @@ public class EndToEndTests extends BaseTests{
 
         Assert.assertEquals(actualTaxAmount,expectedTaxAmount,"Tax amount is not as expected");
 
-        //Assert 5 - to check if the total amount from the app is as expected
+        //Assert 5 - to check the total amount from the app is as expected
         Double expectedTotalAmount = overviewPageObj.calculateTotalAmountToBePaid();
         Double actualTotalAmount = overviewPageObj.totalAmountFromTheApp();
 
@@ -60,7 +60,7 @@ public class EndToEndTests extends BaseTests{
 
         finalPageObj.navigateBackToHomePage();
 
-        //Assert 7 - to verify if the product page title is as expected after navigating from final page
+        //Assert 7 - to verify the product page title after navigating from final page to home page
         String actualPageTitleOfProductsPage = productPageObj.getProductsPageTitle();
         Assert.assertTrue(actualPageTitleOfProductsPage.contains("Products"));
     }

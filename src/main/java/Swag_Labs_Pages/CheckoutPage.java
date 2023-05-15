@@ -13,8 +13,8 @@ import java.util.List;
 public class CheckoutPage extends BasePage{
 
     //Locators
-    By itemsInCartLocator = By.xpath("//div[@class='inventory_item_name']");
-    By checkoutButtonLocator = By.id("checkout");
+    private By itemsInCartLocator = By.xpath("//div[@class='inventory_item_name']");
+    private By checkoutButtonLocator = By.id("checkout");
 
     //Methods
     public List<String> getItemsFromCart() {

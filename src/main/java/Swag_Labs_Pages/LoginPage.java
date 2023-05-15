@@ -18,11 +18,11 @@ public class LoginPage extends BasePage {
     ProductsPage productsPageObj;
 
     //Locators
-    By loginLogoLocator = By.className("login_logo");
-    By usernameLocator = By.id("user-name");
-    By passwordLocator = By.id("password");
-    By loginButtonLocator = By.id("login-button");
-    By errorNotificationLocator = By.xpath("//h3");
+    private By loginLogoLocator = By.className("login_logo");
+    private By usernameLocator = By.id("user-name");
+    private By passwordLocator = By.id("password");
+    private By loginButtonLocator = By.id("login-button");
+    private By errorNotificationLocator = By.xpath("//h3");
 
     //Methods
     public void navigateToHomePage(){
@@ -48,9 +48,9 @@ public class LoginPage extends BasePage {
     public void loginUsingInvalidCredentials(String uname, String password){
         sendKeys(usernameLocator,uname);
         sendKeys(passwordLocator,password);
+        click(loginButtonLocator);
         String screenshot = ScreenShotUtil.takeScreenShot();
         ReporterUtil.getTest().info(MediaEntityBuilder.createScreenCaptureFromBase64String(screenshot).build());
-        click(loginButtonLocator);
     }
     //to get the error notification
     public String getErrorNotification() {

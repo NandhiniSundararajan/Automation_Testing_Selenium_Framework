@@ -7,18 +7,17 @@
     </listeners>
     <test name="End to End">
         <classes>
-            <class name="Swag_Labs_Tests.EndToEndTests">
-            </class>
+            <class name="Swag_Labs_Tests.EndToEndTests"/>
         </classes>
     </test>
     <test name="Unit tests">
         <classes>
             <class name="Swag_Labs_Tests.LoginPageTests">
                 <methods>
-                    <include name="standard_userLoginTest"></include>
-                    <include name="invalidUsernameLoginTest"></include>
-                    <include name="invalidPasswordLoginTest"></include>
-                    <include name="invalidUsernameAndPasswordLoginTest"></include>
+                    <include name="standard_userLoginTest"/>
+                    <include name="invalidUsernameLoginTest"/>
+                    <include name="invalidPasswordLoginTest"/>
+                    <include name="invalidUsernameAndPasswordLoginTest"/>
                 </methods>
             </class>
         </classes>

@@ -11,13 +11,7 @@
                 <methods>
                     <include name="dpTest"></include>
                 </methods>
-
             </class>
-        </classes>
-    </test>
-    <test name="Unit tests">
-        <classes>
-
         </classes>
     </test>
 </suite>

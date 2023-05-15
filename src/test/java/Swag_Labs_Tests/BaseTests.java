@@ -2,10 +2,8 @@ package Swag_Labs_Tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 
-import static Common.DriverManager.getDriver;
-import static Common.DriverManager.initiateDriver;
+import static Common.DriverManager.*;
 
 public class BaseTests {
 
@@ -16,6 +14,7 @@ public class BaseTests {
 
      @AfterMethod
      public void teardown(){
-     getDriver().quit();
+        quitBrowser();
+        //getDriver().quit();
      }
 }

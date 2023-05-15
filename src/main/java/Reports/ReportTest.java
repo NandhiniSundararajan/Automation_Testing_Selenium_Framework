@@ -13,10 +13,10 @@ public class ReportTest {
 
         LocalDateTime localDateTime = LocalDateTime.now();
         int hour = localDateTime.getHour();
-        int second = localDateTime.getSecond();
+        int minute = localDateTime.getMinute();
 
         ExtentReports extent = new ExtentReports();
-        ExtentSparkReporter spark = new ExtentSparkReporter("ExtReports/Spark_" + hour + "_" + second + ".html");
+        ExtentSparkReporter spark = new ExtentSparkReporter("ExtReports/Spark_" + hour + "_" + minute + ".html");
         spark.config().setDocumentTitle("Selenium Reports");
         spark.config().setTheme(Theme.STANDARD);
         extent.attachReporter(spark);

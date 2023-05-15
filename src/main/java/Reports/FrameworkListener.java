@@ -22,17 +22,17 @@ public class FrameworkListener implements ISuiteListener, ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ReporterUtil.getTest().pass("Passed!!");
+        ReporterUtil.getTest().pass("Test Passed!!");
     }
 
     @Override
-   public void onTestFailure(ITestResult result) {
-        ReporterUtil.getTest().fail("Failed");
+    public void onTestFailure(ITestResult result) {
+        ReporterUtil.getTest().fail("Test Failed");
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ReporterUtil.getTest().skip("Skipped");
+        ReporterUtil.getTest().skip("Test Skipped");
     }
 
 }

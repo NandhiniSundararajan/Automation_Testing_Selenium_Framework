@@ -16,11 +16,11 @@ public class OverviewPage extends BasePage {
     Double sum = 0.0;
     Double taxAmount, totalAmount, totalAmountFromApp;
     //Locators
-    By itemPriceLocator = By.xpath("//div[@class='inventory_item_price']");
-    By subtotalPriceLocator = By.xpath("//div[@class='summary_subtotal_label']");
-    By taxAmountFromAppLocator = By.xpath("//div[@class='summary_tax_label']");
-    By totalAmountLocator = By.xpath("//div[@class='summary_info_label summary_total_label']");
-    By finishButtonLocator = By.xpath("//button[@id='finish']");
+    private By itemPriceLocator = By.xpath("//div[@class='inventory_item_price']");
+    private By subtotalPriceLocator = By.xpath("//div[@class='summary_subtotal_label']");
+    private By taxAmountFromAppLocator = By.xpath("//div[@class='summary_tax_label']");
+    private By totalAmountLocator = By.xpath("//div[@class='summary_info_label summary_total_label']");
+    private By finishButtonLocator = By.xpath("//button[@id='finish']");
 
     //Methods
     public FinalPage navigateToFinalPage() {

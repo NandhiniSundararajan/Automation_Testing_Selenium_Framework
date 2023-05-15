@@ -11,8 +11,8 @@ public class FinalPage extends BasePage{
 
     String successMsg;
     //Locators
-    By successMsgLocator = By.xpath("//h2[@class='complete-header']");
-    By backHomeButtonLocator = By.xpath("//button[@id='back-to-products']");
+    private By successMsgLocator = By.xpath("//h2[@class='complete-header']");
+    private By backHomeButtonLocator = By.xpath("//button[@id='back-to-products']");
 
     //Methods
     public void navigateBackToHomePage(){
